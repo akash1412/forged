@@ -4,8 +4,9 @@ import { useContext } from "react";
 import { GlobalContext } from "../context/reducer";
 
 const Form = () => {
+	// !fixed warning issue deploy
 	const { _, dispatch } = useContext(GlobalContext);
-
+	console.log(_);
 	const previewImage = file => {
 		const reader = new FileReader();
 		reader.readAsDataURL(file);

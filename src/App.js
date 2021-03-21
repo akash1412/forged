@@ -1,8 +1,4 @@
-import { useContext } from "react";
-
 import { Box } from "@chakra-ui/layout";
-
-import { GlobalContext } from "./context/reducer";
 
 import Form from "./components/Form";
 // import { Button } from "@chakra-ui/button";
@@ -11,7 +7,7 @@ import Form from "./components/Form";
 import LandingPageView from "./components/LandingPageView";
 
 function App() {
-	const { state } = useContext(GlobalContext);
+	// const { state } = useContext(GlobalContext);
 
 	return (
 		<Box color='#fff' h='100%' fontSize='20px'>
@@ -25,8 +21,7 @@ function App() {
 
 export default App;
 
-{
-	/*
+/*
 			{state.previewImage && <img src={state.previewImage} alt='preview' />}
 			<Button
 				size='lg'
@@ -34,4 +29,3 @@ export default App;
 				opacity={state.showButtonSpinner ? ".6" : "1"}>
 				{state.showButtonSpinner ? <Spinner size='sm' /> : "verify"}
 			</Button> */
-}
