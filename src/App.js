@@ -1,25 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import { useContext } from "react";
+
+import { Box } from "@chakra-ui/layout";
+
+import { GlobalContext } from "./context/reducer";
+
+import Form from "./components/Form";
+// import { Button } from "@chakra-ui/button";
+// import { Spinner } from "@chakra-ui/react";
+
+import LandingPageView from "./components/LandingPageView";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	const { state } = useContext(GlobalContext);
+
+	return (
+		<Box color='#fff' h='100%' fontSize='20px'>
+			<Box d='flex' flexDir='column' alignItems='center'>
+				<LandingPageView />
+				<Form />
+			</Box>
+		</Box>
+	);
 }
 
 export default App;
+
+{
+	/*
+			{state.previewImage && <img src={state.previewImage} alt='preview' />}
+			<Button
+				size='lg'
+				bgColor='primaryGreen'
+				opacity={state.showButtonSpinner ? ".6" : "1"}>
+				{state.showButtonSpinner ? <Spinner size='sm' /> : "verify"}
+			</Button> */
+}
