@@ -12,11 +12,14 @@ const Header = () => (
 		maxHeight='50px'
 		height='50px'
 		width='100%'
-		position='fixed'>
-		<Box d='flex'>
-			<li>tab 1</li>
-			<li>tab 1</li>
-			<li>tab 1</li>
+		position='fixed'
+		d='flex'
+		alignItems='center'>
+		<Box mr='auto'>Icon</Box>
+		<Box d='flex' h='100%' justifyContent='flex-end' alignItems='center'>
+			<li>introduction</li>
+			<li>results</li>
+			<li>tweets</li>
 		</Box>
 	</Box>
 );

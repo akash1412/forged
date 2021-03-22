@@ -1,4 +1,5 @@
 import App from "../App";
+import Analyze from "../analyze";
 import Header from "./header";
 import { Route } from "react-router-dom";
 
@@ -9,7 +10,8 @@ const Wrapper = () => {
 		<Box d='flex' flexDir='column' minH='100vh'>
 			<Header />
 			<Box px='12px' bgColor='primaryDark' flexGrow='1' marginTop='50px'>
-				<Route path='/' component={App} />
+				<Route exact path='/' component={App} />
+				<Route path='/analyze' component={Analyze} />
 			</Box>
 		</Box>
 	);

@@ -3,22 +3,16 @@ import { useContext } from "react";
 
 import { GlobalContext } from "../context/reducer";
 
+import { useHistory } from "react-router-dom";
+
 const Form = () => {
 	// !fixed warning issue deploy
-	const { _, dispatch } = useContext(GlobalContext);
-	console.log(_);
-	const previewImage = file => {
-		const reader = new FileReader();
-		reader.readAsDataURL(file);
-		reader.onloadend = () => {
-			dispatch({ type: "SET_PREVIEW_IMAGE", payload: reader.result });
-		};
-	};
+	const { dispatch } = useContext(GlobalContext);
+
+	const history = useHistory();
 
 	const uploadImage = async file => {
-		// setIsImageUploading(true);
-
-		dispatch({ type: "SHOW_BUTTON_SPINNER" });
+		// dispatch({ type: "UPLOADING_IMAGE" });
 
 		const formData = new FormData();
 		formData.append("file", file);
@@ -39,9 +33,9 @@ const Form = () => {
 		const file = e.target.files[0];
 		if (!file) return;
 
-		previewImage(file);
 		uploadImage(file);
 
+		history.push("/analyze");
 		// router.push("/analyze");
 	};
 

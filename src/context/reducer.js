@@ -5,26 +5,25 @@ export const GlobalContext = createContext();
 const ContextProvider = ({ children }) => {
 	const INITIAL_STATE = {
 		previewImage: null,
-		uploadedImage: null,
+		cloudImage: null,
 		results: null,
 		loading: false,
-		showButtonSpinner: false,
+		imageUploaded: false,
 	};
 
 	const Reducer = (state, action) => {
 		switch (action.type) {
-			case "SET_PREVIEW_IMAGE":
-				return { ...state, previewImage: action.payload };
-
-			case "SHOW_BUTTON_SPINNER":
-				return { ...state, showButtonSpinner: true };
+			// case "UPLOADING_IMAGE":
+			// 	return { ...state, imageUploaded: true };
 
 			case "SET_UPLOADED_IMAGE":
 				return {
 					...state,
-					uploadedImage: action.payload,
-					showButtonSpinner: false,
+					cloudImage: action.payload,
 				};
+
+			case "IMAGE_UPLOADED":
+				return { ...state, imageUploaded: true };
 
 			default:
 				return state;
@@ -34,7 +33,7 @@ const ContextProvider = ({ children }) => {
 	const [state, dispatch] = useReducer(Reducer, INITIAL_STATE);
 
 	return (
-		<GlobalContext.Provider value={{ state, dispatch }}>
+		<GlobalContext.Provider value={{ ...state, dispatch }}>
 			{children}
 		</GlobalContext.Provider>
 	);
