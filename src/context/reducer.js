@@ -7,6 +7,7 @@ const ContextProvider = ({ children }) => {
 		results: null,
 		loading: false,
 		imageUploaded: false,
+		showAlert: false,
 	};
 
 	const Reducer = (state, action) => {
@@ -23,8 +24,16 @@ const ContextProvider = ({ children }) => {
 			case "IMAGE_UPLOADED":
 				return { ...state, imageUploaded: true };
 
+			case "SHOW_ALERT":
+				return { ...state, showAlert: !state.showAlert };
+
 			case "INIT":
-				return { ...state, cloudImage: null, results: null };
+				return {
+					...state,
+					cloudImage: null,
+					results: null,
+					imageUploaded: false,
+				};
 
 			default:
 				return state;

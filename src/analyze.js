@@ -49,8 +49,14 @@ const Analyze = props => {
 					py='10px'
 					minW='11rem'
 					outline='none'
-					bgColor='rgba(15, 14, 14, 0.945)'
-					color='#fff'>
+					bgColor={
+						!imageUploaded
+							? "rgba(15, 14, 14, 0.645)"
+							: "rgba(15, 14, 14, 0.945)"
+					}
+					color='#fff'
+					onClick={() => dispatch({ type: "SHOW_ALERT" })}
+					_hover={{ bgColor: "rgba(15, 14, 14, 0.945)" }}>
 					{!imageUploaded ? <Spinner size='sm' color='#fff' /> : "Analyze"}
 				</Button>
 			</Box>

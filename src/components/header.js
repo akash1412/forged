@@ -1,4 +1,4 @@
-import { Box, List } from "@chakra-ui/layout";
+import { Box } from "@chakra-ui/layout";
 import React from "react";
 
 const Header = () => (
@@ -19,7 +19,7 @@ const Header = () => (
 			Forged
 		</Box>
 
-		<List
+		{/* <List
 			listStyleType='none'
 			d='flex'
 			h='100%'
@@ -27,7 +27,7 @@ const Header = () => (
 			alignItems='center'
 			fontWeight='500'>
 			<li>problem</li>
-		</List>
+		</List> */}
 	</Box>
 );
 
