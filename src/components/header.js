@@ -1,13 +1,13 @@
-import { Box } from "@chakra-ui/layout";
+import { Box, List } from "@chakra-ui/layout";
 import React from "react";
 
 const Header = () => (
 	<Box
 		px='20px'
 		bgColor='primaryDark'
-		color='#fff'
-		borderBottomColor='black.20'
-		borderBottomWidth='2px'
+		color='rgba(15, 14, 14, 0.945)'
+		borderBottomColor='rgba(15, 14, 14, 0.945)'
+		borderBottomWidth='1.5px'
 		borderStyle='solid'
 		maxHeight='50px'
 		height='50px'
@@ -15,12 +15,19 @@ const Header = () => (
 		position='fixed'
 		d='flex'
 		alignItems='center'>
-		<Box mr='auto'>Icon</Box>
-		<Box d='flex' h='100%' justifyContent='flex-end' alignItems='center'>
-			<li>introduction</li>
-			<li>results</li>
-			<li>tweets</li>
+		<Box mr='auto' fontWeight='800' fontSize='30px'>
+			Forged
 		</Box>
+
+		<List
+			listStyleType='none'
+			d='flex'
+			h='100%'
+			justifyContent='flex-end'
+			alignItems='center'
+			fontWeight='500'>
+			<li>problem</li>
+		</List>
 	</Box>
 );
 

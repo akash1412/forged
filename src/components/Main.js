@@ -6,6 +6,7 @@ const Main = () => {
 	return (
 		<Center>
 			<Form />
+			<LandingPageView />
 		</Center>
 	);
 };

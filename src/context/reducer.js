@@ -1,10 +1,8 @@
 import { useReducer, createContext } from "react";
-
 export const GlobalContext = createContext();
 
 const ContextProvider = ({ children }) => {
 	const INITIAL_STATE = {
-		previewImage: null,
 		cloudImage: null,
 		results: null,
 		loading: false,
@@ -24,6 +22,9 @@ const ContextProvider = ({ children }) => {
 
 			case "IMAGE_UPLOADED":
 				return { ...state, imageUploaded: true };
+
+			case "INIT":
+				return { ...state, cloudImage: null, results: null };
 
 			default:
 				return state;

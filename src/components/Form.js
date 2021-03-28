@@ -44,9 +44,14 @@ const Form = () => {
 			<FormLabel
 				htmlFor='upload'
 				d='inline-block'
-				bgColor='primaryGreen'
-				px='10px'
-				py='5px'>
+				bgColor='rgba(15, 14, 14, 0.945)'
+				color='#fff'
+				px='60px'
+				py='20px'
+				textAlign='center'
+				cursor='pointer'
+				borderRadius='5px'
+				fontSize='20px'>
 				Upload
 			</FormLabel>
 			<Input id='upload' type='file' d='none' onChange={handleInputChange} />
